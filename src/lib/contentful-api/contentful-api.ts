@@ -35,13 +35,7 @@ export interface EnrollmentStepParams {
   presentation: string;
 }
 
-type ContentfulExtension =
-  | {
-      code: string;
-    }
-  | undefined;
-
-  export async function queryContentful<
+export async function queryContentful<
   TVariables extends Record<string, any>,
   TContext = any,
   TRootValue = any,

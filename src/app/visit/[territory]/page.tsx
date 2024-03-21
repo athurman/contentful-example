@@ -41,19 +41,15 @@ export default async function TerritoryPage({ params }: { params: { territory: s
       <section className="py-24">
         <div className="flex flex-col mx-auto text-center text-slate-600">
           <h1 className="text-5xl font-medium mb-6">Things To Do</h1>
-          <div className="py-32 mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
+          <div className="py-8 mb-16 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3">
             {content?.activitiesCollection?.items?.map((activity, i) => {
               if (activity == null) {
                 return null;
               }
 
-              if (activity.__typename === 'TouristActivity') {
-                return (
-                  <TouristActivity key={i} activity={activity} />
-                );
-              }
-
-              return null;
+              return (
+                <TouristActivity key={i} activity={activity} />
+              );
             })}
           </div>
         </div>
